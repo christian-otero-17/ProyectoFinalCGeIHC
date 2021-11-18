@@ -500,6 +500,7 @@ int main()
 		Kitt_M.RenderModel();
 
 		//Faro COCHE
+
 		if (avanzaf > 0)
 		{
 			if (movCoche < 5.0f)
