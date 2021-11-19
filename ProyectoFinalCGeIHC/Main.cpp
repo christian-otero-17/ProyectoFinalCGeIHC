@@ -35,30 +35,20 @@ Práctica: Animación Sencilla y animación compleja
 #include"SpotLight.h"
 
 const float toRadians = 3.14159265f / 180.0f;
-float movCoche;
-float movOffset;
-float rotllanta;
-float rotllantaOffset;
-
-float avanzaf = 1.0f;
-
-float movHelicoptero;
-float movHeliOffset;
-float avanzaH = 1.0f;
-
 
 Window mainWindow;
 std::vector<Mesh*> meshList;
 std::vector<Shader> shaderList;
 Camera camera;
 
-Texture texturacarl;
 Texture brickTexture;
 Texture dirtTexture;
 Texture plainTexture;
 Texture dadoTexture;
 Texture pisoTexture;
 Texture Tagave;
+Texture maderaTexture;
+
 //materiales
 Material Material_brillante;
 Material Material_opaco;
@@ -73,6 +63,7 @@ Model Llanta_M;
 Model Camino_M;
 Model Blackhawk_M;
 Model Dado_M;
+Model Base_M;
 
 Skybox skybox;
 
@@ -277,8 +268,6 @@ int main()
 
 	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 5.0f, 0.5f);
 
-	texturacarl = Texture("Textures/texturacarl.tga");
-	texturacarl.LoadTextureA();
 	brickTexture = Texture("Textures/brick.png");
 	brickTexture.LoadTextureA();
 	dirtTexture = Texture("Textures/dirt.png");
@@ -287,21 +276,26 @@ int main()
 	plainTexture.LoadTextureA();
 	dadoTexture = Texture("Textures/dado.tga");
 	dadoTexture.LoadTextureA();
-	pisoTexture = Texture("Textures/pasto.tga");
+	pisoTexture = Texture("Textures/arbusto.tga");
 	pisoTexture.LoadTextureA();
 	Tagave = Texture("Textures/Agave.tga");
 	Tagave.LoadTextureA();
 	Material_brillante = Material(4.0f, 256);
 	Material_opaco = Material(0.3f, 4);
 
+	maderaTexture = Texture("Textures/madera.tga");
+	maderaTexture.LoadTextureA();
+
 	Kitt_M = Model();
-	Kitt_M.LoadModel("Models/Carl/carl.obj");
+	Kitt_M.LoadModel("Models/basemadera.obj");
 	Llanta_M = Model();
 	Llanta_M.LoadModel("Models/llanta.obj");
 	Blackhawk_M = Model();
 	Blackhawk_M.LoadModel("Models/uh60.obj");
 	Camino_M = Model();
 	Camino_M.LoadModel("Models/arbusto.obj");
+	Base_M = Model();
+	Base_M.LoadModel("Models/arbustomuro.obj");
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
@@ -309,33 +303,33 @@ int main()
 		0.0f, 0.0f, -1.0f);
 	//contador de luces puntuales
 	unsigned int pointLightCount = 0;
-	//Declaración de primer luz puntual
-	pointLights[0] = PointLight(1.0f, 0.0f, 0.0f,
+	////Declaración de primer luz puntual
+	/*pointLights[0] = PointLight(1.0f, 0.0f, 0.0f,
 		0.0f, 1.0f,
 		2.0f, 1.5f, 1.5f,
 		0.3f, 0.2f, 0.1f);
-	pointLightCount++;
+	pointLightCount++;*/
 
 	unsigned int spotLightCount = 0;
 	//luz fija
-	spotLights[0] = SpotLight(1.0f, 1.0f, 0.0f,
-		0.0f, 2.0f,
-		10.0f, 0.0f, 0.0f,
-		0.0f, -5.0f, 0.0f,
+	/*spotLights[0] = SpotLight(1.0f, 1.0f, 1.0f,
+		0.5f, 2.0f,
+		0.0f, 800.0f, 0.0f,
+		0.0f, -1.0f, 0.0f,
 		1.0f, 0.0f, 0.0f,
-		10.0f);
+		20.0f);*/
 	spotLightCount++;
 	//luz de faro
-	spotLights[1] = SpotLight(0.0f, 1.0f, 1.0f,
-		0.0f, 2.0f,
-		10.0f, 0.0f, 0.0f,
+	spotLights[1] = SpotLight(1.0f, 0.0f, 0.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f,
 		1.0f, 0.0f, 0.0f,
-		1.0f, 0.0f, 0.0f,
-		10.0f);
+		0.0f);
 	spotLightCount++;
 	//linterna
 	spotLights[2] = SpotLight(1.0f, 1.0f, 1.0f,
-		0.0f, 2.0f,
+		0.5f, 2.0f,
 		0.0f, 0.0f, 0.0f,
 		0.0f, -1.0f, 0.0f,
 		1.0f, 0.0f, 0.0f,
@@ -355,13 +349,12 @@ int main()
 	/*skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_rt.tga");
 	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_lf.tga");
 	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_dn.tga");
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_ft.tga");
 	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_up.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_bk.tga");
-	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_ft.tga");*/
-
+	skyboxFaces.push_back("Textures/Skybox/cupertin-lake-night_bk.tga");*/
 
 	skybox = Skybox(skyboxFaces);
-
+	
 
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformEyePosition = 0,
 		uniformSpecularIntensity = 0, uniformShininess = 0;
@@ -420,35 +413,40 @@ int main()
 		//Piso
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(30.0f, 1.0f, 30.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 1.0f, 8.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		pisoTexture.UseTexture();
 		meshList[2]->RenderMesh();
 
 		//Carga de Modelos
 
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		/*model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		texturacarl.UseTexture();
-		Kitt_M.RenderModel();
+		Kitt_M.RenderModel();*/
 
-
-		//Agave ¿qué sucede si lo renderizan antes del coche y de la pista?
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -1.7f, -2.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		//blending: transparencia o traslucidez
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		Tagave.UseTexture();
-		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		meshList[3]->RenderMesh();
-		glDisable(GL_BLEND);
-		glUseProgram(0);
+		model = glm::translate(model, glm::vec3(0.0f, -1.65f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model)); 
+		Base_M.RenderModel();
+
+		////Agave ¿qué sucede si lo renderizan antes del coche y de la pista?
+		//model = glm::mat4(1.0);
+		//model = glm::translate(model, glm::vec3(0.0f, -1.7f, -2.0f));
+		//model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		////blending: transparencia o traslucidez
+		//glEnable(GL_BLEND);
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		//Tagave.UseTexture();
+		//Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		//meshList[3]->RenderMesh();
+		//glDisable(GL_BLEND);
+		//glUseProgram(0);
 
 		mainWindow.swapBuffers();
 	}
