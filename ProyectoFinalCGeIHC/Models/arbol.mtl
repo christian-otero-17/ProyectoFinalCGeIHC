@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl 10459_White_Ash_Tree_v1
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\White_Ash_Tree_v1_L3.123cb9916c2a-d762-485a-872c-b7210bc5f34a\\10459_White_Ash_Tree_v1_Diffuse.jpg

@@ -40,14 +40,12 @@ Window mainWindow;
 std::vector<Mesh*> meshList;
 std::vector<Shader> shaderList;
 Camera camera;
+Camera camera2;
 
-Texture brickTexture;
-Texture dirtTexture;
 Texture plainTexture;
-Texture dadoTexture;
 Texture pisoTexture;
-Texture Tagave;
 Texture maderaTexture;
+Texture arbolTexture;
 
 //materiales
 Material Material_brillante;
@@ -61,9 +59,11 @@ SpotLight spotLights[MAX_SPOT_LIGHTS];
 Model Kitt_M;
 Model Llanta_M;
 Model Camino_M;
-Model Blackhawk_M;
-Model Dado_M;
 Model Base_M;
+Model Arbol_M;
+Model Sheen_M;
+Model Carl_M;
+Model Goddard_M;
 
 Skybox skybox;
 
@@ -177,79 +177,6 @@ void CreateObjects()
 
 }
 
-void CrearCubo()
-{
-	unsigned int cubo_indices[] = {
-		// front
-		0, 1, 2,
-		2, 3, 0,
-		// right
-		4, 5, 6,
-		6, 7, 4,
-		// back
-		8, 9, 10,
-		10, 11, 8,
-
-		// left
-		12, 13, 14,
-		14, 15, 12,
-		// bottom
-		16, 17, 18,
-		18, 19, 16,
-		// top
-		20, 21, 22,
-		22, 23, 20,
-	};
-	//Ejercicio 1: reemplazar con sus dados de 6 caras texturizados, agregar normales
-// average normals
-	GLfloat cubo_vertices[] = {
-		// front
-		//x		y		z		S		T			NX		NY		NZ
-		-0.5f, -0.5f,  0.5f,	0.27f,  0.35f,		0.0f,	0.0f,	-1.0f,	//0
-		0.5f, -0.5f,  0.5f,		0.48f,	0.35f,		0.0f,	0.0f,	-1.0f,	//1
-		0.5f,  0.5f,  0.5f,		0.48f,	0.64f,		0.0f,	0.0f,	-1.0f,	//2
-		-0.5f,  0.5f,  0.5f,	0.27f,	0.64f,		0.0f,	0.0f,	-1.0f,	//3
-		// right
-		//x		y		z		S		T
-		0.5f, -0.5f,  0.5f,	    0.52f,  0.35f,		-1.0f,	0.0f,	0.0f,
-		0.5f, -0.5f,  -0.5f,	0.73f,	0.35f,		-1.0f,	0.0f,	0.0f,
-		0.5f,  0.5f,  -0.5f,	0.73f,	0.64f,		-1.0f,	0.0f,	0.0f,
-		0.5f,  0.5f,  0.5f,	    0.52f,	0.64f,		-1.0f,	0.0f,	0.0f,
-		// back
-		-0.5f, -0.5f, -0.5f,	0.77f,	0.35f,		0.0f,	0.0f,	1.0f,
-		0.5f, -0.5f, -0.5f,		0.98f,	0.35f,		0.0f,	0.0f,	1.0f,
-		0.5f,  0.5f, -0.5f,		0.98f,	0.64f,		0.0f,	0.0f,	1.0f,
-		-0.5f,  0.5f, -0.5f,	0.77f,	0.64f,		0.0f,	0.0f,	1.0f,
-
-		// left
-		//x		y		z		S		T
-		-0.5f, -0.5f,  -0.5f,	0.0f,	0.35f,		1.0f,	0.0f,	0.0f,
-		-0.5f, -0.5f,  0.5f,	0.23f,  0.35f,		1.0f,	0.0f,	0.0f,
-		-0.5f,  0.5f,  0.5f,	0.23f,	0.64f,		1.0f,	0.0f,	0.0f,
-		-0.5f,  0.5f,  -0.5f,	0.0f,	0.64f,		1.0f,	0.0f,	0.0f,
-
-		// bottom
-		//x		y		z		S		T
-		-0.5f, -0.5f,  0.5f,	0.27f,	0.02f,		0.0f,	1.0f,	0.0f,
-		0.5f,  -0.5f,  0.5f,	0.48f,  0.02f,		0.0f,	1.0f,	0.0f,
-		 0.5f,  -0.5f,  -0.5f,	0.48f,	0.31f,		0.0f,	1.0f,	0.0f,
-		-0.5f, -0.5f,  -0.5f,	0.27f,	0.31f,		0.0f,	1.0f,	0.0f,
-
-		//UP
-		 //x		y		z		S		T
-		 -0.5f, 0.5f,  0.5f,	0.27f,	0.68f,		0.0f,	-1.0f,	0.0f,
-		 0.5f,  0.5f,  0.5f,	0.48f,  0.68f,		0.0f,	-1.0f,	0.0f,
-		  0.5f, 0.5f,  -0.5f,	0.48f,	0.98f,		0.0f,	-1.0f,	0.0f,
-		 -0.5f, 0.5f,  -0.5f,	0.27f,	0.98f,		0.0f,	-1.0f,	0.0f,
-
-	};
-
-	Mesh *cubo = new Mesh();
-	cubo->CreateMesh(cubo_vertices, cubo_indices, 192, 36);
-	meshList.push_back(cubo);
-
-}
-
 void CreateShaders()
 {
 	Shader *shader1 = new Shader();
@@ -263,39 +190,44 @@ int main()
 	mainWindow.Initialise();
 
 	CreateObjects();
-	CrearCubo();
 	CreateShaders();
 
-	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 5.0f, 0.5f);
+	camera = Camera(glm::vec3(4.0f, 5.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 5.0f, 0.5f);
+	camera = Camera(glm::vec3(-8.0f, 1.0f, 6.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 5.0f, 0.5f);//Camara para la pelota
 
-	brickTexture = Texture("Textures/brick.png");
-	brickTexture.LoadTextureA();
-	dirtTexture = Texture("Textures/dirt.png");
-	dirtTexture.LoadTextureA();
+
+	//Carga de Texturas
 	plainTexture = Texture("Textures/plain.png");
 	plainTexture.LoadTextureA();
-	dadoTexture = Texture("Textures/dado.tga");
-	dadoTexture.LoadTextureA();
-	pisoTexture = Texture("Textures/arbusto.tga");
+
+
+	pisoTexture = Texture("Textures/pasto.tga");
 	pisoTexture.LoadTextureA();
-	Tagave = Texture("Textures/Agave.tga");
-	Tagave.LoadTextureA();
+
 	Material_brillante = Material(4.0f, 256);
 	Material_opaco = Material(0.3f, 4);
 
-	maderaTexture = Texture("Textures/madera.tga");
-	maderaTexture.LoadTextureA();
+	//Carga de Modelos
 
 	Kitt_M = Model();
 	Kitt_M.LoadModel("Models/basemadera.obj");
-	Llanta_M = Model();
-	Llanta_M.LoadModel("Models/llanta.obj");
-	Blackhawk_M = Model();
-	Blackhawk_M.LoadModel("Models/uh60.obj");
-	Camino_M = Model();
-	Camino_M.LoadModel("Models/arbusto.obj");
+    
 	Base_M = Model();
 	Base_M.LoadModel("Models/arbustomuro.obj");
+
+	Arbol_M = Model();
+	Arbol_M.LoadModel("Models/arbol.obj");
+
+	Goddard_M = Model();
+	Goddard_M.LoadModel("Models/Goddard/goddard.obj");
+
+	Carl_M = Model();
+	Carl_M.LoadModel("Models/carl/carl.obj");
+
+	Sheen_M = Model();
+	Sheen_M.LoadModel("Models/Sheen/sheen.obj");
+
+
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
@@ -371,26 +303,61 @@ int main()
 		//Recibir eventos del usuario
 		glfwPollEvents();
 
-		camera.keyControl(mainWindow.getsKeys(), deltaTime);
-		camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
 		// Clear the window
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		skybox.DrawSkybox(camera.calculateViewMatrix(), projection);
-		shaderList[0].UseShader();
-		uniformModel = shaderList[0].GetModelLocation();
-		uniformProjection = shaderList[0].GetProjectionLocation();
-		uniformView = shaderList[0].GetViewLocation();
-		uniformEyePosition = shaderList[0].GetEyePositionLocation();
-		uniformSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
-		uniformShininess = shaderList[0].GetShininessLocation();
+		if (mainWindow.getcambio() == 0.0) {
+			//Primer camara 
+			camera.keyControl(mainWindow.getsKeys(), deltaTime);
+			camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
 
-		glm::vec3 lowerLight = camera.getCameraPosition();
-		lowerLight.y -= 0.3f;
-		spotLights[2].SetFlash(lowerLight, camera.getCameraDirection());
+			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			skybox.DrawSkybox(camera.calculateViewMatrix(), projection);
+			shaderList[0].UseShader();
+			uniformModel = shaderList[0].GetModelLocation();
+			uniformProjection = shaderList[0].GetProjectionLocation();
+			uniformView = shaderList[0].GetViewLocation();
+			uniformEyePosition = shaderList[0].GetEyePositionLocation();
+			uniformSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
+			uniformShininess = shaderList[0].GetShininessLocation();
 
-		shaderList[0].SetDirectionalLight(&mainLight);
-		shaderList[0].SetPointLights(pointLights, pointLightCount);
+			glm::vec3 lowerLight = camera.getCameraPosition();
+			lowerLight.y -= 0.3f;
+			spotLights[2].SetFlash(lowerLight, camera.getCameraDirection());
+
+			shaderList[0].SetDirectionalLight(&mainLight);
+			shaderList[0].SetPointLights(pointLights, pointLightCount);
+			glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+			glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
+			glUniform3f(uniformEyePosition, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
+		}
+
+		if (mainWindow.getcambio() == 1.0) {
+			//Segunda camara
+			camera2.keyControl(mainWindow.getsKeys(), deltaTime);
+			camera2.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
+
+			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			skybox.DrawSkybox(camera2.calculateViewMatrix(), projection);
+			shaderList[0].UseShader();
+			uniformModel = shaderList[0].GetModelLocation();
+			uniformProjection = shaderList[0].GetProjectionLocation();
+			uniformView = shaderList[0].GetViewLocation();
+			uniformEyePosition = shaderList[0].GetEyePositionLocation();
+			uniformSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
+			uniformShininess = shaderList[0].GetShininessLocation();
+
+			glm::vec3 lowerLight = camera2.getCameraPosition();
+			lowerLight.y -= 0.3f;
+			spotLights[0].SetFlash(lowerLight, camera2.getCameraDirection());
+
+			shaderList[0].SetDirectionalLight(&mainLight);
+			shaderList[0].SetPointLights(pointLights, pointLightCount);
+			glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+			glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera2.calculateViewMatrix()));
+			glUniform3f(uniformEyePosition, camera2.getCameraPosition().x, camera2.getCameraPosition().y, camera2.getCameraPosition().z);
+		}
+
 
 		//Prender y apagar la linterna
 		if (mainWindow.getapagalinterna() > 0)
@@ -420,12 +387,20 @@ int main()
 
 		//Carga de Modelos
 
-		/*model = glm::mat4(1.0);
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(1.0f, 0.f, 2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+	/*	model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));*/
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Arbol_M.RenderModel();
+
+
+		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Kitt_M.RenderModel();*/
+		Kitt_M.RenderModel();
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.65f, 0.0f));
@@ -433,6 +408,31 @@ int main()
 		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model)); 
 		Base_M.RenderModel();
+
+		//Personajes
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(3.0f, -1.0f, -5.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+	/*	model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 0.0f, 0.0f));*/
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Sheen_M.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(3.0f, -1.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
+	/*	model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 0.0f, 0.0f));*/
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Carl_M.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-5.0f, -1.0f, 5.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+	/*	model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 0.0f, 0.0f));*/
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Goddard_M.RenderModel();
+
+
+	
 
 		////Agave ¿qué sucede si lo renderizan antes del coche y de la pista?
 		//model = glm::mat4(1.0);

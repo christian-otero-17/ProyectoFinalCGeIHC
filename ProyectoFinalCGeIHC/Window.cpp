@@ -132,6 +132,15 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 		theWindow->rotallanta -= 15.0;
 	}
 
+	//Cambio de camara
+	if (key == GLFW_KEY_5) {
+		theWindow->cambiocam = 1.0;
+	}
+
+	if (key == GLFW_KEY_6) {
+		theWindow->cambiocam = 0.0;
+	}
+
 	if (key >= 0 && key < 1024)
 	{
 		if (action == GLFW_PRESS)
