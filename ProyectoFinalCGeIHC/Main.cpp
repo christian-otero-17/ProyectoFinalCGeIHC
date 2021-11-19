@@ -46,6 +46,7 @@ Texture plainTexture;
 Texture pisoTexture;
 Texture maderaTexture;
 Texture arbolTexture;
+Texture labTexture;
 
 //materiales
 Material Material_brillante;
@@ -56,7 +57,8 @@ DirectionalLight mainLight;
 PointLight pointLights[MAX_POINT_LIGHTS];
 SpotLight spotLights[MAX_SPOT_LIGHTS];
 
-Model Kitt_M;
+Model Laboratorio_M;
+Model Basemadera_M;
 Model Llanta_M;
 Model Camino_M;
 Model Base_M;
@@ -200,6 +202,8 @@ int main()
 	plainTexture = Texture("Textures/plain.png");
 	plainTexture.LoadTextureA();
 
+	labTexture = Texture("Textures/cabañamadera.tga");
+	labTexture.LoadTextureA();
 
 	pisoTexture = Texture("Textures/pasto.tga");
 	pisoTexture.LoadTextureA();
@@ -208,9 +212,12 @@ int main()
 	Material_opaco = Material(0.3f, 4);
 
 	//Carga de Modelos
+	Laboratorio_M = Model();
+	Laboratorio_M.LoadModel("Models/laboratorio.obj");
 
-	Kitt_M = Model();
-	Kitt_M.LoadModel("Models/basemadera.obj");
+
+	Basemadera_M = Model();
+	Basemadera_M.LoadModel("Models/basemadera.obj");
     
 	Base_M = Model();
 	Base_M.LoadModel("Models/arbustomuro.obj");
@@ -380,27 +387,29 @@ int main()
 		//Piso
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(8.0f, 1.0f, 8.0f));
+		model = glm::scale(model, glm::vec3(15.0f, 1.0f, 15.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		pisoTexture.UseTexture();
 		meshList[2]->RenderMesh();
 
 		//Carga de Modelos
 
+	
+
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(1.0f, 0.f, 2.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(8.0f, -1.0f, -55.0f));
+		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
 	/*	model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));*/
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Arbol_M.RenderModel();
 
 
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-50.0f, -1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Kitt_M.RenderModel();
+		Basemadera_M.RenderModel();
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -1.65f, 0.0f));
@@ -411,28 +420,32 @@ int main()
 
 		//Personajes
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(3.0f, -1.0f, -5.0f));
+		model = glm::translate(model, glm::vec3(-20.0f, -1.0f, -25.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-	/*	model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 0.0f, 0.0f));*/
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Sheen_M.RenderModel();
 
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(3.0f, -1.0f, 2.0f));
+		model = glm::translate(model, glm::vec3(-35.0f, -1.0f, 2.0f));
 		model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
-	/*	model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 0.0f, 0.0f));*/
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Carl_M.RenderModel();
 
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(-5.0f, -1.0f, 5.0f));
+		model = glm::translate(model, glm::vec3(-5.0f, -1.0f, 15.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-	/*	model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 0.0f, 0.0f));*/
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Goddard_M.RenderModel();
 
-
-	
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(30.0f, -1.f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Laboratorio_M.RenderModel();
 
 		////Agave ¿qué sucede si lo renderizan antes del coche y de la pista?
 		//model = glm::mat4(1.0);
