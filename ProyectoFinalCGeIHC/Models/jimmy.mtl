@@ -1,7 +1,7 @@
 # Blender MTL File: 'jimmy.blend'
 # Material Count: 1
 
-newmtl Material.001
+newmtl Material.002
 Ns 323.999994
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
@@ -10,4 +10,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\\Users\\chris\\Desktop\\texturajimmy.tga
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\ProyectoFinalCGeIHC\\ProyectoFinalCGeIHC\\Textures\\texturajimmy.tga
