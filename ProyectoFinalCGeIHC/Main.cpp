@@ -226,7 +226,7 @@ int main()
 	Arbol_M.LoadModel("Models/arbol.obj");
 
 	Goddard_M = Model();
-	Goddard_M.LoadModel("Models/Goddard/goddard.obj");
+	Goddard_M.LoadModel("Models/jimmy.obj");
 
 	Carl_M = Model();
 	Carl_M.LoadModel("Models/carl/carl.obj");
