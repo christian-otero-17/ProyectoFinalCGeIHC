@@ -74,6 +74,7 @@ Model Escalera_M;
 Model Arbusto_M;
 Model Pisopiedra_M;
 Model Strato_M;
+Model Ultralord_M;
 
 Skybox skybox;
 
@@ -216,9 +217,9 @@ int main()
 	Material_opaco = Material(0.3f, 4);
 
 	//Carga de Modelos
+	
 	Laboratorio_M = Model();
 	Laboratorio_M.LoadModel("Models/laboratorio.obj");
-
 
 	Baseconcreto_M = Model();
 	Baseconcreto_M.LoadModel("Models/baseconcreto.obj");
@@ -227,7 +228,7 @@ int main()
 	Muro_M.LoadModel("Models/muro.obj");
 
 	Goddard_M = Model();
-	Goddard_M.LoadModel("Models/Goddard/goddard.obj");
+	Goddard_M.LoadModel("Models/goddard2.obj");
 
 	Carl_M = Model();
 	Carl_M.LoadModel("Models/carl/carl.obj");
@@ -268,6 +269,9 @@ int main()
 
 	Strato_M = Model();
 	Strato_M.LoadModel ("Models/strato.obj");
+
+	Ultralord_M = Model();
+	Ultralord_M.LoadModel("Models/Ultralordtoy.dae");
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
@@ -335,6 +339,8 @@ int main()
 
 	skybox = Skybox(skyboxFaces);
 	
+	Material_brillante = Material(4.0f, 256);
+	Material_opaco = Material(0.3f, 4);
 
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformEyePosition = 0,
 		uniformSpecularIntensity = 0, uniformShininess = 0;
@@ -541,11 +547,19 @@ int main()
 		Pisopiedra_M.RenderModel();
 
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(-70.0f, -1.0f, -160.0f));
+		model = glm::translate(model, glm::vec3(-70.0f + mainWindow.getmuevex(), 5.0f, -160.0f));
 		model = glm::scale(model, glm::vec3(15.0f, 15.0f, 15.0f));
 		model = glm::rotate(model, -270 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Strato_M.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, -30.0f));
+		model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
+		model = glm::rotate(model, -270 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Ultralord_M.RenderModel();
+
 
 
 		//--------------------PERSONAJES-------------------------//
@@ -565,6 +579,7 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Carl_M.RenderModel();
 
+		//Goddard
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(-5.0f, -1.0f, 20.0f));
 		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
@@ -572,11 +587,13 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Goddard_M.RenderModel();
 
+		//Jimmy
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(-5.0f, -1.0f, 15.0f));
 		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess); 
 		Jimmy_M.RenderModel();
 
 
