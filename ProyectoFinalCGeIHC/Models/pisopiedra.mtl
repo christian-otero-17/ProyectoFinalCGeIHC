@@ -1,0 +1,288 @@
+# Blender MTL File: 'None'
+# Material Count: 26
+
+newmtl Mat
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.001
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.003
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.004
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.005
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.006
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.007
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.008
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.009
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.010
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.011
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.012
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.013
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.014
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.015
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.016
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.017
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.018
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.019
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.020
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.021
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.022
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.023
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.024
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
+
+newmtl Mat.025
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\chris\\Desktop\\LAB Compu Gráfica\\Modelos y Texturas creados\\Lowpoly\\droptomaterial,color,bump,displacement.jpg
