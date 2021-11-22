@@ -14,7 +14,8 @@ Window::Window(GLint windowWidth, GLint windowHeight)
 	width = windowWidth;
 	height = windowHeight;
 	muevex = 0.0f;
-	muevey = 0.0F;
+	muevey = 0.0f;
+	giraplanta = 0.0f;
 	rotallanta = 0.0f;
 
 	for (size_t i = 0; i < 1024; i++)
@@ -107,11 +108,11 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	{
 		glfwSetWindowShouldClose(window, GL_TRUE);
 	}
-	if (key == GLFW_KEY_C)
+	if (key == GLFW_KEY_Z)
 	{
 		theWindow-> muevex += 1.0;
 	}
-	if (key == GLFW_KEY_V)
+	if (key == GLFW_KEY_X)
 	{
 		theWindow-> muevex -= 1.0;
 	}
@@ -123,14 +124,47 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	{
 		theWindow->muevey -= 1.0;
 	}
-	if (key == GLFW_KEY_O)
+	if (key == GLFW_KEY_C)
+	{
+		theWindow->giraplanta += 1.0;
+	}
+	if (key == GLFW_KEY_V)
+	{
+		theWindow->giraplanta -= 1.0;
+	}
+	if (key == GLFW_KEY_1)
+	{
+		theWindow->apagalinterna2 = 1.0;
+	}
+	if (key == GLFW_KEY_2)
+	{
+		theWindow->apagalinterna2 = -1.0;
+	}
+	if (key == GLFW_KEY_3)
+	{
+		theWindow->apagalinterna3 = 1.0;
+	}
+	if (key == GLFW_KEY_4)
+	{
+		theWindow->apagalinterna3 = -1.0;
+	}
+	if (key == GLFW_KEY_5)
+	{
+		theWindow->apagalinterna4 = 1.0;
+	}
+	if (key == GLFW_KEY_6)
+	{
+		theWindow->apagalinterna4 = -1.0;
+	}
+	if (key == GLFW_KEY_7)
 	{
 		theWindow->apagalinterna = 1.0;
 	}
-	if (key == GLFW_KEY_P)
+	if (key == GLFW_KEY_8)
 	{
 		theWindow->apagalinterna = -1.0;
 	}
+
 	//Rota Llanta
 	if (key == GLFW_KEY_L)
 	{
@@ -142,11 +176,11 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	}
 
 	//Cambio de camara
-	if (key == GLFW_KEY_5) {
+	if (key == GLFW_KEY_9) {
 		theWindow->cambiocam = 1.0;
 	}
 
-	if (key == GLFW_KEY_6) {
+	if (key == GLFW_KEY_0) {
 		theWindow->cambiocam = 0.0;
 	}
 
