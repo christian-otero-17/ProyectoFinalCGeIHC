@@ -14,6 +14,7 @@ public:
 	GLfloat getXChange();
 	GLfloat getYChange();
 	GLfloat getmuevex() { return muevex ; }
+	GLfloat getmuevey() { return muevey; }
 	GLfloat getrotallanta() { return rotallanta; }
 	GLfloat getapagalinterna() { return apagalinterna; }
 	GLfloat getcambio() { return cambiocam; }
@@ -34,6 +35,7 @@ private:
 	GLfloat xChange;
 	GLfloat yChange;
 	GLfloat muevex;
+	GLfloat muevey;
 	GLfloat rotallanta;
 	GLfloat apagalinterna = 1;
 	GLfloat cambiocam = 0.0;
